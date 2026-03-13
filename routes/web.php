@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+declare(strict_types=1);
 
-Route::group([
-    'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
-], function () {
-    Route::view('/', 'welcome')->name('home');
-});
+use App\Enums\Locale;
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('{locale?}')
+    ->whereIn('locale', Locale::values())
+    ->group(function (): void {
+        Route::view('/', 'welcome')->name('home');
+    });

@@ -1,3 +1,10 @@
 {
-    "preset": "laravel"
+    "preset": "laravel",
+    "rules": {
+        "declare_strict_types": true,
+        "void_return": true,
+        "phpdoc_to_param_type": true,
+        "phpdoc_to_return_type": true,
+        "phpdoc_to_property_type": true
+    }
 }

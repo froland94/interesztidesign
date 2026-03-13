@@ -18,3 +18,6 @@ down:
 
 pint:
 	./vendor/bin/sail php vendor/bin/pint
+
+test:
+	./vendor/bin/sail php artisan test

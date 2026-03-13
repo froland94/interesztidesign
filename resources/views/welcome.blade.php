@@ -95,10 +95,10 @@
 
                     {{-- Language Switcher --}}
                     <div class="mt-6 flex gap-2">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" 
-                               class="text-[11px] px-2 py-1 rounded border {{ App::getLocale() == $localeCode ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'border-[#e3e3e0] dark:border-[#3E3E3A]' }}">
-                                {{ strtoupper($localeCode) }}
+                        @foreach (\App\Enums\Locale::cases() as $locale)
+                            <a href="{{ $locale->value === 'hu' ? route('home') : route('home', ['locale' => $locale->value]) }}"
+                               class="text-[11px] px-2 py-1 rounded border {{ App::getLocale() === $locale->value ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'border-[#e3e3e0] dark:border-[#3E3E3A]' }}">
+                                {{ strtoupper($locale->value) }}
                             </a>
                         @endforeach
                     </div>

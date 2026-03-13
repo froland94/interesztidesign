@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -21,7 +23,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'name',
         'email',
         'password',
@@ -32,7 +34,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $hidden = [
+    protected array $hidden = [
         'password',
         'remember_token',
     ];
