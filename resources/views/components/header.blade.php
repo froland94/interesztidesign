@@ -8,12 +8,14 @@
         <!-- Navigation -->
         <nav class="hidden md:flex items-center gap-8">
             <a href="#szolgaltatasok" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
-                Szolgáltatások
+                {{ __('nav.services') }}
             </a>
             <a href="#rolam" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
-                Rólam
+                {{ __('nav.about') }}
             </a>
         </nav>
+
+
 
         <!-- Right Side: Utils / Language Switcher -->
         <div class="flex items-center gap-6">

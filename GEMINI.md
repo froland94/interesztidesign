@@ -35,6 +35,8 @@ This project has domain-specific skills available. You MUST activate the relevan
 - You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, and naming.
 - Use descriptive names for variables and methods. For example, `isRegisteredForDiscounts`, not `discount()`.
 - Check for existing components to reuse before writing a new one.
+- Always strive to follow SOLID principles; ensure that distinct concerns are separated at the file level.
+- Never hardcode user-facing text (labels, descriptions, error messages, etc.) anywhere in the codebase. Always add new strings to the appropriate localization files (lang/{locale}/{file}.php) and use the `__('file.key')` helper.
 
 ## Verification Scripts
 

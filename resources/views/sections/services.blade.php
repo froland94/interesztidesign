@@ -3,9 +3,12 @@
     <div class="max-w-7xl mx-auto px-6">
         <!-- Section Header -->
         <div class="max-w-3xl mb-20 text-center mx-auto">
-            <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-6 text-neutral-900">Szolgáltatások</h2>
+            <p class="text-neutral-400 text-sm font-light tracking-widest uppercase mb-4">
+                {{ __('hero.subtitle') }}
+            </p>
+            <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-6 text-neutral-900">{{ __('services.title') }}</h2>
             <p class="text-neutral-500 text-lg font-light leading-relaxed mb-4">
-                Lakberendezés Budapesten és környékén – önazonos, egyedi otthon tervezése elérhető áron.
+                {{ __('services.subtitle') }}
             </p>
             <div class="w-12 h-px bg-neutral-200 mx-auto mt-8"></div>
         </div>
@@ -15,27 +18,24 @@
             <!-- Vibe Check -->
             <div class="service-card p-8 rounded-[2rem] border border-neutral-200 bg-white/50 backdrop-blur-sm flex flex-col hover:border-neutral-300">
                 <div class="mb-8">
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">.Vibe check.</span>
-                    <h3 class="text-xl font-medium mt-2 text-neutral-900">Lakberendezési tanácsadás</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">{{ __('services.vibe_check.name') }}</span>
+                    <h3 class="text-xl font-medium mt-2 text-neutral-900">{{ __('services.vibe_check.title') }}</h3>
                 </div>
                 <p class="text-neutral-500 text-sm font-light leading-relaxed mb-8 flex-grow">
-                    Akkor ideális választás, ha már van elképzelésed az otthonodról, de bizonytalan vagy a részletekben. Segít, ha stílus-, anyag- vagy színválasztási kérdéseid vannak.
+                    {{ __('services.vibe_check.description') }}
                 </p>
                 <div class="space-y-4 mb-8">
-                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">Mit tartalmaz</h4>
+                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">{{ __('services.vibe_check.includes_title') }}</h4>
                     <ul class="text-xs text-neutral-600 space-y-2 font-light">
-                        <li class="flex items-start gap-2"><span>•</span> Összesen 3 óra konzultáció</li>
-                        <li class="flex items-start gap-2"><span>•</span> Anyag- és színválasztás</li>
-                        <li class="flex items-start gap-2"><span>•</span> Burkolat- és textil tanácsadás</li>
-                        <li class="flex items-start gap-2"><span>•</span> Bútortipps és ötletek</li>
-                        <li class="flex items-start gap-2"><span>•</span> DIY ötletek és trükkök</li>
-                        <li class="flex items-start gap-2"><span>•</span> Moodboard</li>
+                        @foreach(__('services.vibe_check.includes') as $item)
+                        <li class="flex items-start gap-2"><span>•</span> {{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="pt-8 border-t border-neutral-100 mt-auto text-center">
-                    <div class="text-2xl font-light mb-6 text-neutral-900">72 000 Ft</div>
+                    <div class="text-2xl font-light mb-6 text-neutral-900">{{ __('services.vibe_check.price') }}</div>
                     <a href="#" class="block w-full py-3.5 px-6 rounded-full bg-neutral-900 text-white text-center text-xs font-bold tracking-widest uppercase hover:bg-black transition-all shadow-sm">
-                        Tanácsot kérek
+                        {{ __('services.vibe_check.cta') }}
                     </a>
                 </div>
             </div>
@@ -43,27 +43,24 @@
             <!-- Based -->
             <div class="service-card p-8 rounded-[2rem] border border-neutral-200 bg-white/50 backdrop-blur-sm flex flex-col hover:border-neutral-300">
                 <div class="mb-8">
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">.Based.</span>
-                    <h3 class="text-xl font-medium mt-2 text-neutral-900">Alap lakberendezési tervezés</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">{{ __('services.based.name') }}</span>
+                    <h3 class="text-xl font-medium mt-2 text-neutral-900">{{ __('services.based.title') }}</h3>
                 </div>
                 <p class="text-neutral-500 text-sm font-light leading-relaxed mb-8 flex-grow">
-                    Ezt a csomagot válaszd, ha az otthonod megújulását szeretnéd, de nem tervezel bontással vagy falmozgatással járó átalakítást.
+                    {{ __('services.based.description') }}
                 </p>
                 <div class="space-y-4 mb-8">
-                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">Mit tartalmaz</h4>
+                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">{{ __('services.based.includes_title') }}</h4>
                     <ul class="text-xs text-neutral-600 space-y-2 font-light">
-                        <li class="flex items-start gap-2"><span>•</span> Online konzultációk (korlátlan)</li>
-                        <li class="flex items-start gap-2"><span>•</span> 3 alkalom személyes konzultáció</li>
-                        <li class="flex items-start gap-2"><span>•</span> 2-3 db 2D berendezési alaprajz</li>
-                        <li class="flex items-start gap-2"><span>•</span> 3D látványtervek</li>
-                        <li class="flex items-start gap-2"><span>•</span> Anyag, textil, szín moodboard</li>
-                        <li class="flex items-start gap-2"><span>•</span> Bútor- és lámpatípusok</li>
+                        @foreach(__('services.based.includes') as $item)
+                        <li class="flex items-start gap-2"><span>•</span> {{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="pt-8 border-t border-neutral-100 mt-auto text-center">
-                    <div class="text-2xl font-light mb-6 text-neutral-900">9 000 Ft/m²</div>
+                    <div class="text-2xl font-light mb-6 text-neutral-900">{{ __('services.based.price') }}</div>
                     <a href="#" class="block w-full py-3.5 px-6 rounded-full bg-neutral-900 text-white text-center text-xs font-bold tracking-widest uppercase hover:bg-black transition-all shadow-sm">
-                        Árajánlatot kérek
+                        {{ __('services.based.cta') }}
                     </a>
                 </div>
             </div>
@@ -71,27 +68,24 @@
             <!-- Full Send -->
             <div class="service-card p-8 rounded-[2rem] border border-neutral-200 bg-white/50 backdrop-blur-sm flex flex-col hover:border-neutral-300">
                 <div class="mb-8">
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">.Full send.</span>
-                    <h3 class="text-xl font-medium mt-2 text-neutral-900">Teljes lakberendezési tervezés</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">{{ __('services.full_send.name') }}</span>
+                    <h3 class="text-xl font-medium mt-2 text-neutral-900">{{ __('services.full_send.title') }}</h3>
                 </div>
                 <p class="text-neutral-500 text-sm font-light leading-relaxed mb-8 flex-grow">
-                    Új építésű otthonba költözöl vagy teljes körű felújításba kezdtél. Itt nincs kompromisszum: falak mozgathatók, új funkciók alakíthatók ki.
+                    {{ __('services.full_send.description') }}
                 </p>
                 <div class="space-y-4 mb-8">
-                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">Mit tartalmaz</h4>
+                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">{{ __('services.full_send.includes_title') }}</h4>
                     <ul class="text-xs text-neutral-600 space-y-2 font-light">
-                        <li class="flex items-start gap-2"><span>•</span> Konzultáció (online & személyes)</li>
-                        <li class="flex items-start gap-2"><span>•</span> Bontási és építési alaprajz</li>
-                        <li class="flex items-start gap-2"><span>•</span> Elektromos- és világítási tervek</li>
-                        <li class="flex items-start gap-2"><span>•</span> 2-3 db 2D berendezési alaprajz</li>
-                        <li class="flex items-start gap-2"><span>•</span> 3D látványtervek</li>
-                        <li class="flex items-start gap-2"><span>•</span> Teljes körű moodboard</li>
+                        @foreach(__('services.full_send.includes') as $item)
+                        <li class="flex items-start gap-2"><span>•</span> {{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="pt-8 border-t border-neutral-100 mt-auto text-center">
-                    <div class="text-2xl font-light mb-6 text-neutral-900">14 000 Ft/m²</div>
+                    <div class="text-2xl font-light mb-6 text-neutral-900">{{ __('services.full_send.price') }}</div>
                     <a href="#" class="block w-full py-3.5 px-6 rounded-full bg-neutral-900 text-white text-center text-xs font-bold tracking-widest uppercase hover:bg-black transition-all shadow-sm">
-                        Folytatjuk
+                        {{ __('services.full_send.cta') }}
                     </a>
                 </div>
             </div>
@@ -99,32 +93,32 @@
             <!-- Lagom -->
             <div class="service-card p-8 rounded-[2rem] border border-neutral-200 bg-white/50 backdrop-blur-sm flex flex-col hover:border-neutral-300">
                 <div class="mb-8">
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">.Lagom.</span>
-                    <h3 class="text-xl font-medium mt-2 text-neutral-900">Ikeás bútortervezés</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 italic">{{ __('services.lagom.name') }}</span>
+                    <h3 class="text-xl font-medium mt-2 text-neutral-900">{{ __('services.lagom.title') }}</h3>
                 </div>
                 <p class="text-neutral-500 text-sm font-light leading-relaxed mb-8 flex-grow">
-                    Akkor ideális, ha kedveled az IKEA konyhát és/vagy gardróbot, és szeretnéd őket egyénileg, speciális tervezéssel rendelni.
+                    {{ __('services.lagom.description') }}
                 </p>
                 <div class="space-y-4 mb-8">
-                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">Mit tartalmaz</h4>
+                    <h4 class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">{{ __('services.lagom.includes_title') }}</h4>
                     <ul class="text-xs text-neutral-600 space-y-2 font-light">
-                        <li class="flex items-start gap-2"><span>•</span> Személyes felmérés</li>
-                        <li class="flex items-start gap-2"><span>•</span> Bútortervezés IKEA szoftverben</li>
-                        <li class="flex items-start gap-2"><span>•</span> Rendelés egyeztetés & lista</li>
-                        <li class="flex items-start gap-2"><span>•</span> Beszerzés & összeszerelés</li>
-                        <li class="flex items-start gap-2"><span>•</span> Beépítés felügyelete</li>
+                        @foreach(__('services.lagom.includes') as $item)
+                        <li class="flex items-start gap-2"><span>•</span> {{ $item }}</li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="pt-8 border-t border-neutral-100 mt-auto text-center">
                     <div class="space-y-1 mb-6">
-                        <div class="text-sm font-light text-neutral-500">Konyha: <span class="text-neutral-900 text-lg">140 000 Ft</span></div>
-                        <div class="text-sm font-light text-neutral-500">Gardrób: <span class="text-neutral-900 text-lg">80 000 Ft</span></div>
+                        <div class="text-sm font-light text-neutral-500">{{ __('services.lagom.price_kitchen') }}</div>
+                        <div class="text-sm font-light text-neutral-500">{{ __('services.lagom.price_wardrobe') }}</div>
                     </div>
                     <a href="#" class="block w-full py-3.5 px-6 rounded-full bg-neutral-900 text-white text-center text-xs font-bold tracking-widest uppercase hover:bg-black transition-all shadow-sm">
-                        Bútort terveztetek
+                        {{ __('services.lagom.cta') }}
                     </a>
                 </div>
             </div>
+
+
         </div>
     </div>
 </section>

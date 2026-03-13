@@ -17,24 +17,23 @@
             <!-- Text Column -->
             <div class="w-full lg:w-1/2 space-y-10">
                 <div>
-                    <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-8 text-neutral-900">Rólam</h2>
+                    <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-8 text-neutral-900">{{ __('about.title') }}</h2>
                     <p class="text-xl font-medium text-neutral-800 leading-snug lg:max-w-md">
-                        Somogyi-Vass Eszter vagyok,<br>az intereszti.design lakberendezője.
+                        {!! nl2br(e(__('about.intro'))) !!}
                     </p>
                 </div>
                 
                 <div class="space-y-6 text-neutral-500 font-light leading-relaxed text-lg">
                     <p>
-                        13 évet dolgoztam marketing- és termékmenedzsmentben, az utóbbi közel 7 évet Magyarország piacvezető állásportáljánál, ahol digitális product manager voltam, később pedig a product csapat vezetője.
+                        {{ __('about.p1') }}
                     </p>
                     <p>
-                        Imádok problémákat megoldani, és olyan megoldásokat tervezni, amelyek nem csak szépek, hanem valódi felhasználói igényekre adnak választ.
-                    </p>
-                    <p>
-                        Azt gondolom, hogy a product manager munkája nem sokban tér el a lakberendezőjétől: mindkettőnél az a feladat, hogyan legyen valami egyszerre szép és jól használható. Ugyanazt a játékot játszom, csak most már más eszközökkel.
+                        {{ __('about.p2') }}
                     </p>
                 </div>
             </div>
+
+
         </div>
     </div>
 </section>
