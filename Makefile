@@ -8,9 +8,13 @@ start:
 	@echo "\nDatabase ready! Running migrations..."
 	./vendor/bin/sail artisan migrate
 	$(MAKE) build
+	$(MAKE) pint
 
 build:
 	./vendor/bin/sail pnpm run build
 
 down:
 	./vendor/bin/sail down
+
+pint:
+	./vendor/bin/sail php vendor/bin/pint
