@@ -8,5 +8,5 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('{locale?}')
     ->whereIn('locale', Locale::values())
     ->group(function (): void {
-        Route::view('/', 'welcome')->name('home');
+        Route::view('/', 'home')->name('home');
     });
