@@ -7,11 +7,14 @@
 
         <!-- Navigation -->
         <nav class="hidden md:flex items-center gap-8">
-            <a href="#szolgaltatasok" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
+            <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#szolgaltatasok" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
                 {{ __('nav.services') }}
             </a>
-            <a href="#rolam" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
+            <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#rolam" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
                 {{ __('nav.about') }}
+            </a>
+            <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#contact" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
+                {{ __('nav.contact') }}
             </a>
         </nav>
 

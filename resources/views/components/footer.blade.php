@@ -47,7 +47,7 @@
 
             <!-- Links -->
             <div class="flex flex-col gap-1 items-start md:items-end">
-                <a href="#" class="hover:text-black transition-colors">{{ __('footer.cookies') }}</a>
+                <a href="{{ route('cookies', ['locale' => app()->getLocale()]) }}" class="hover:text-black transition-colors">{{ __('footer.cookies') }}</a>
                 <a href="#" class="hover:text-black transition-colors">{{ __('footer.privacy') }}</a>
             </div>
         </div>
