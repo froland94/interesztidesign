@@ -6,18 +6,20 @@ use App\Enums\Locale;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('{locale?}')
-    ->whereIn('locale', Locale::values())
-    ->group(function (): void {
-        Route::get('/', [ProductController::class, 'index'])->name('home');
+foreach (Locale::values() as $locale) {
+    Route::prefix($locale === Locale::HUNGARIAN->value ? '' : $locale)
+        ->name("$locale.")
+        ->group(function () use ($locale): void {
+            Route::get('/', [ProductController::class, 'index'])->name('home');
 
-        // Localized Cookie Policy based on app locale
-        Route::get(__('routes.cookies'), function () {
-            return view('cookies');
-        })->name('cookies');
+            // Localized Cookie Policy based on app locale
+            Route::get(trans('routes.cookies', locale: $locale), function () {
+                return view('cookies');
+            })->name('cookies');
 
-        // Localized Privacy Policy based on app locale
-        Route::get(__('routes.privacy'), function () {
-            return view('privacy');
-        })->name('privacy');
-    });
+            // Localized Privacy Policy based on app locale
+            Route::get(trans('routes.privacy', locale: $locale), function () {
+                return view('privacy');
+            })->name('privacy');
+        });
+}

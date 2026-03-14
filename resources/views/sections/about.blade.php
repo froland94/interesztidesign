@@ -1,5 +1,5 @@
 <!-- About Me Section -->
-<section id="rolam" class="py-24 sm:py-32 bg-white overflow-hidden">
+<section id="{{ __('nav.anchors.about') }}" class="py-24 sm:py-32 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <!-- Image Column -->

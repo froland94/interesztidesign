@@ -13,13 +13,13 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
+use GeoSot\FilamentEnvEditor\FilamentEnvEditorPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use GeoSot\FilamentEnvEditor\FilamentEnvEditorPlugin;
 use Openplain\FilamentShadcnTheme\Color as ShadcnColor;
 
 class AdminPanelProvider extends PanelProvider

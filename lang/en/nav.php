@@ -6,4 +6,10 @@ return [
     'services' => 'Services',
     'about' => 'About',
     'contact' => 'Contact',
+    'anchors' => [
+        'home' => 'home',
+        'services' => 'services',
+        'about' => 'about',
+        'contact' => 'contact',
+    ],
 ];

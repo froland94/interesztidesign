@@ -1,4 +1,4 @@
-<section id="contact" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
+<section id="{{ __('nav.anchors.contact') }}" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <!-- Left: Form -->
@@ -102,7 +102,7 @@
                             </span>
                         </label>
                         <p class="text-[10px] font-light text-neutral-400 pl-7">
-                            Az <a href="{{ route('privacy', ['locale' => app()->getLocale()]) }}" class="text-neutral-900 hover:underline font-medium">Adatkezelési tájékoztatót</a> itt érheti el.
+                            Az <a href="{{ route(app()->getLocale() . '.privacy') }}" class="text-neutral-900 hover:underline font-medium">Adatkezelési tájékoztatót</a> itt érheti el.
                         </p>
                     </div>
 

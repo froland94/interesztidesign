@@ -1,5 +1,5 @@
 <!-- Services Section -->
-<section id="szolgaltatasok" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
+<section id="{{ __('nav.anchors.services') }}" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <!-- Section Header -->
         <div class="max-w-3xl mb-20 text-center mx-auto">
@@ -42,7 +42,7 @@
                         {!! nl2br(e($product->price)) !!}
                     </div>
                     @endif
-                    <a href="#contact" class="block w-full py-3.5 px-6 rounded-full bg-neutral-900 text-white text-center text-xs font-bold tracking-widest uppercase hover:bg-black transition-all shadow-sm">
+                    <a href="#{{ __('nav.anchors.contact') }}" class="block w-full py-3.5 px-6 rounded-full bg-neutral-900 text-white text-center text-xs font-bold tracking-widest uppercase hover:bg-black transition-all shadow-sm">
                         {{ $product->cta_text ?? __('services.cta_fallback') }}
                     </a>
                 </div>
