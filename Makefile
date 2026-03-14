@@ -21,3 +21,6 @@ pint:
 
 test:
 	./vendor/bin/sail php artisan test
+
+seed:
+	./vendor/bin/sail artisan migrate:fresh --seed
