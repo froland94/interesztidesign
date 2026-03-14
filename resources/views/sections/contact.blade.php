@@ -107,7 +107,7 @@
                             </span>
                         </label>
                         <p class="text-[10px] font-light text-neutral-400 pl-7">
-                            Az <a href="#" class="text-neutral-900 hover:underline font-medium">Adatkezelési tájékoztatót</a> itt érheti el.
+                            Az <a href="{{ route('privacy', ['locale' => app()->getLocale()]) }}" class="text-neutral-900 hover:underline font-medium">Adatkezelési tájékoztatót</a> itt érheti el.
                         </p>
                     </div>
 

@@ -14,4 +14,9 @@ Route::prefix('{locale?}')
         Route::get(__('routes.cookies'), function () {
             return view('cookies');
         })->name('cookies');
+
+        // Localized Privacy Policy based on app locale
+        Route::get(__('routes.privacy'), function () {
+            return view('privacy');
+        })->name('privacy');
     });
