@@ -55,6 +55,7 @@
         @include('sections.hero')
         @include('sections.services')
         @include('sections.about')
+        @include('sections.contact')
     </main>
 
     <x-footer />
