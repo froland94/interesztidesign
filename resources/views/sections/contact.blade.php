@@ -69,19 +69,14 @@
                             {{ __('contact.form.service') }} <span class="normal-case font-normal text-neutral-300 ml-1">{{ __('contact.form.required') }}</span>
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 bg-white/50 p-4 rounded-2xl border border-neutral-100">
-                            @foreach([
-                                'vibe_check' => __('services.vibe_check.title'),
-                                'based' => __('services.based.title'),
-                                'full_send' => __('services.full_send.title'),
-                                'lagom' => __('services.lagom.title')
-                            ] as $key => $label)
+                            @foreach($products as $product)
                                 <label class="flex items-center group cursor-pointer">
                                     <div class="relative flex items-center">
-                                        <input type="checkbox" name="services[]" value="{{ $key }}"
+                                        <input type="checkbox" name="services[]" value="{{ $product->id }}"
                                             class="w-4 h-4 rounded-full border-neutral-300 text-neutral-900 focus:ring-neutral-900 transition-all">
                                     </div>
                                     <span class="ml-3 text-[13px] text-neutral-500 font-light group-hover:text-neutral-900 transition-colors">
-                                        {{ $label }}
+                                        {{ $product->title }}
                                     </span>
                                 </label>
                             @endforeach
