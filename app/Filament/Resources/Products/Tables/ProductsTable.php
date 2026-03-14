@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Filament\Resources\Products\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
@@ -24,9 +25,6 @@ class ProductsTable
                 TextColumn::make('tag')
                     ->label('Címke')
                     ->searchable(),
-                TextColumn::make('sort_order')
-                    ->label('Sorrend')
-                    ->sortable(),
                 ToggleColumn::make('is_active')
                     ->label('Aktív'),
             ])
@@ -36,12 +34,18 @@ class ProductsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->hiddenLabel()
+                    ->size('lg'),
+                DeleteAction::make()
+                    ->hiddenLabel()
+                    ->size('lg'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                    DeleteBulkAction::make()
+                        ->label('Kijelöltek törlése'),
+                ])->label('Műveletek'),
             ]);
     }
 }

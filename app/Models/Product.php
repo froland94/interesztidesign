@@ -11,6 +11,15 @@ class Product extends Model
 {
     use HasTranslations;
 
+    protected static function booted(): void
+    {
+        static::creating(function (Product $product): void {
+            if ($product->sort_order === null) {
+                $product->sort_order = (int) static::max('sort_order') + 1;
+            }
+        });
+    }
+
     protected $fillable = [
         'tag',
         'title',

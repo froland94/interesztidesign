@@ -118,7 +118,7 @@
             </div>
 
             <!-- Right: Image -->
-            <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="lg:col-span-6 order-1 lg:order-2 relative">
                 <div class="aspect-square sm:aspect-[4/5] lg:aspect-[5/6] rounded-[3rem] overflow-hidden border border-neutral-100 relative z-10 shadow-2xl">
                     <img src="{{ asset('images/contact.webp') }}" alt="{{ __('contact.title') }}" class="w-full h-full object-cover">
                 </div>

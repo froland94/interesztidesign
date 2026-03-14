@@ -22,6 +22,16 @@ class ProductResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getPluralLabel(): ?string
+    {
+        return 'Termékek';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'Termék';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return ProductForm::configure($schema);

@@ -7,8 +7,6 @@ namespace App\Filament\Resources\Products\Schemas;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Schema;
 
@@ -18,16 +16,8 @@ class ProductForm
     {
         return $schema
             ->components([
-                Section::make()
-                    ->schema([
-                        TextInput::make('sort_order')
-                            ->numeric()
-                            ->default(0),
-                        Toggle::make('is_active')
-                            ->default(true),
-                    ])->columns(2),
-
-                Tabs::make('Translations')
+                Tabs::make('Fordítások')
+                    ->columnSpanFull()
                     ->tabs([
                         Tabs\Tab::make('Magyar')
                             ->icon('heroicon-o-language')
@@ -54,26 +44,27 @@ class ProductForm
                                     ->label('Gomb szöveg'),
                             ]),
 
-                        Tabs\Tab::make('English')
+                        Tabs\Tab::make('Angol')
                             ->icon('heroicon-o-language')
                             ->schema([
                                 TextInput::make('tag.en')
-                                    ->label('Tag (e.g. Vibe check)'),
+                                    ->label('Címke (pl. Vibe check)'),
                                 TextInput::make('title.en')
-                                    ->label('Title'),
+                                    ->label('Megnevezés'),
                                 Textarea::make('description.en')
-                                    ->label('Description')
+                                    ->label('Leírás')
                                     ->rows(5),
                                 Repeater::make('includes.en')
-                                    ->label('What is included')
+                                    ->label('Mit tartalmaz')
                                     ->simple(
                                         TextInput::make('item')
+                                            ->label('Elem')
                                     ),
                                 Textarea::make('price.en')
-                                    ->label('Price (can be multi-line)')
+                                    ->label('Ár (több soros is lehet)')
                                     ->rows(3),
                                 TextInput::make('cta_text.en')
-                                    ->label('CTA Button Text'),
+                                    ->label('Gomb szöveg'),
                             ]),
                     ]),
             ]);

@@ -17,10 +17,12 @@
     <style>
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
             font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
         }
 
         .hero-zoom {

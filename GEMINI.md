@@ -416,5 +416,6 @@ livewire(ListUsers::class)
 
 - **Never assume public file visibility.** File visibility is `private` by default. Always use `->visibility('public')` when public access is needed.
 - **Never assume full-width layout.** `Grid`, `Section`, and `Fieldset` do not span all columns by default. Explicitly set column spans when needed.
+- **Admin panel language.** The Filament admin interface must be strictly Hungarian (HU) only; it does not support multiple languages.
 
 </laravel-boost-guidelines>
