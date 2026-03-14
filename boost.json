@@ -2,8 +2,17 @@
     "agents": [
         "gemini"
     ],
+    "guidelines": true,
     "herd_mcp": false,
     "mcp": true,
     "nightwatch_mcp": false,
-    "sail": true
+    "packages": [
+        "filament/filament"
+    ],
+    "sail": true,
+    "skills": [
+        "livewire-development",
+        "pest-testing",
+        "tailwindcss-development"
+    ]
 }
