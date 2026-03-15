@@ -425,3 +425,19 @@ livewire(ListUsers::class)
 - **Never assume full-width layout.** `Grid`, `Section`, and `Fieldset` do not span all columns by default. Explicitly set column spans when needed.
 
 </laravel-boost-guidelines>
+
+# Project Conventions
+
+## Routing
+
+- **Never put validation or business logic directly in route closures** in `web.php` or any route file. Always extract this logic into a dedicated controller method.
+- **Route files are split by concern:**
+  - `routes/web.php` — public-facing frontend routes only
+  - `routes/admin.php` — admin panel routes (registered via `bootstrap/app.php` with `web` middleware)
+  - Add new route files for other concerns (e.g. `routes/api.php`) as needed.
+
+## Controllers
+
+- Admin controllers live in `app/Http/Controllers/Admin/`.
+- Public controllers live in `app/Http/Controllers/` (or a relevant subfolder).
+- Always create a Form Request for validation instead of validating inline in the controller.
