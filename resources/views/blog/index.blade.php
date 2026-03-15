@@ -19,7 +19,7 @@
                         @if ($post->thumbnail)
                         <a href="{{ route(app()->getLocale() . '.blog.show', $post->getTranslation('slug', app()->getLocale())) }}" class="block overflow-hidden rounded-2xl mb-5">
                             <img
-                                src="/blog-images/{{ $post->thumbnail }}"
+                                src="/images/blog/{{ $post->thumbnail }}"
                                 alt="{{ $post->title }}"
                                 class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
                                 loading="lazy"

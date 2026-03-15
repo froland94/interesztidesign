@@ -29,7 +29,7 @@
                 @elseif ($block['type'] === 'image')
                     <figure class="mb-10">
                         <img
-                            src="/blog-images/{{ $block['data']['path'] }}"
+                            src="/images/blog/{{ $block['data']['path'] }}"
                             alt="{{ $block['data']['caption'][app()->getLocale()] ?? '' }}"
                             class="w-full rounded-2xl"
                             loading="lazy"
@@ -46,9 +46,9 @@
                         <div class="gallery-masonry-sizer"></div>
                         @foreach ($block['data']['images'] as $image)
                         <div class="gallery-masonry-item">
-                            <a href="/blog-images/{{ $image }}" class="glightbox" data-gallery="post-gallery">
+                            <a href="/images/blog/{{ $image }}" class="glightbox" data-gallery="post-gallery">
                                 <img
-                                    src="/blog-images/{{ $image }}"
+                                    src="/images/blog/{{ $image }}"
                                     alt=""
                                     class="w-full rounded-2xl block cursor-zoom-in"
                                     loading="lazy"

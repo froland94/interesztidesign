@@ -14,9 +14,9 @@
             <div class="gallery-masonry-sizer"></div>
             @foreach($galleries as $gallery)
             <div class="gallery-masonry-item">
-                <a href="/gallery/{{ $gallery->image }}" class="glightbox" data-gallery="gallery">
+                <a href="/images/gallery/{{ $gallery->image }}" class="glightbox" data-gallery="gallery">
                     <img
-                        src="/gallery/{{ $gallery->image }}"
+                        src="/images/gallery/{{ $gallery->image }}"
                         alt="{{ $gallery->alt ?? '' }}"
                         class="w-full rounded-2xl block cursor-zoom-in"
                         loading="lazy"
