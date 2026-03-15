@@ -7,6 +7,7 @@ return [
     'gallery' => 'Munkáim',
     'about' => 'Rólam',
     'contact' => 'Kapcsolat',
+    'blog' => 'Blog',
     'anchors' => [
         'home' => 'kezdooldal',
         'services' => 'szolgaltatasok',

@@ -5,9 +5,6 @@
 
         <!-- Section Header -->
         <div class="max-w-3xl mb-20 text-center mx-auto">
-            <p class="text-neutral-400 text-sm font-light tracking-widest uppercase mb-4">
-                Portfolio
-            </p>
             <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-6 text-neutral-900">Munkáim</h2>
             <div class="w-12 h-px bg-neutral-200 mx-auto mt-8"></div>
         </div>

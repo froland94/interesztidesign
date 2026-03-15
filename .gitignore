@@ -29,3 +29,5 @@ yarn-error.log
 /public/fonts/filament
 /public/gallery/*
 !/public/gallery/.gitkeep
+/public/blog-images/*
+!/public/blog-images/.gitkeep

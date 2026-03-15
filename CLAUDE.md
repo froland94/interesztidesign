@@ -436,6 +436,14 @@ livewire(ListUsers::class)
   - `routes/admin.php` — admin panel routes (registered via `bootstrap/app.php` with `web` middleware)
   - Add new route files for other concerns (e.g. `routes/api.php`) as needed.
 
+## Localization & Translations
+
+- **NEVER use inline ternary locale checks in Blade views**, e.g. `app()->getLocale() === 'hu' ? '...' : '...'`. This is forbidden.
+- Always use the `__('key')` helper with the appropriate language file (e.g. `__('blog.read_more')`).
+- Create a dedicated `lang/hu/*.php` and `lang/en/*.php` file per concern (e.g. `blog.php`, `nav.php`).
+- **NEVER hardcode locale strings** (`'hu'`, `'en'`) anywhere in PHP code or Blade views. Always use the `App\Enums\Locale` enum: `Locale::HUNGARIAN->value`, `Locale::ENGLISH->value`. To iterate over all locales use `Locale::cases()` or `Locale::values()`.
+- **When using a class in a Blade view**, always import it at the top of the file with `@php use App\...\ClassName; @endphp`, then reference it directly (e.g. `Locale::cases()`). Never use the fully-qualified class name inline (e.g. `App\Enums\Locale::cases()`).
+
 ## Controllers
 
 - Admin controllers live in `app/Http/Controllers/Admin/`.

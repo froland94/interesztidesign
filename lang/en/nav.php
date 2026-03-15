@@ -7,6 +7,7 @@ return [
     'gallery' => 'My Work',
     'about' => 'About',
     'contact' => 'Contact',
+    'blog' => 'Blog',
     'anchors' => [
         'home' => 'home',
         'services' => 'services',
