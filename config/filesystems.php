@@ -43,7 +43,25 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            'url' => rtrim(env('APP_URL', ''), '/').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'galleries' => [
+            'driver' => 'local',
+            'root' => public_path('images/gallery'),
+            'url' => rtrim(env('APP_URL', ''), '/').'/images/gallery',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'blog' => [
+            'driver' => 'local',
+            'root' => public_path('images/blog'),
+            'url' => rtrim(env('APP_URL', ''), '/').'/images/blog',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

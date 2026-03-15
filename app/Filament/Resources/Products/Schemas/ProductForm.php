@@ -33,8 +33,10 @@ class ProductForm
                                     ->rows(5),
                                 Repeater::make('includes.hu')
                                     ->label('Mit tartalmaz')
+                                    ->required()
                                     ->simple(
                                         TextInput::make('item')
+                                            ->label('Elem')
                                             ->required()
                                     ),
                                 Textarea::make('price.hu')

@@ -1,6 +1,5 @@
 <footer class="bg-white pt-24 pb-12 text-neutral-500 font-light tracking-wide text-sm">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Top Section -->
         <div class="mb-16 text-center">
             <h2 class="text-3xl sm:text-4xl text-neutral-900 font-light tracking-tight mb-4">
                 {{ __('footer.title') }}
@@ -9,7 +8,6 @@
                 {{ __('footer.subtitle') }}
             </p>
             
-            <!-- Social Icons -->
             <div class="flex items-center justify-center gap-4">
                 <a href="{{ config('contact.instagram') }}" target="_blank" class="text-[#E4405F] hover:opacity-80 transition-opacity">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -24,28 +22,23 @@
             </div>
         </div>
 
-        <!-- Bottom Section -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pt-12 border-t border-neutral-100 text-[13px]">
-            <!-- Hours -->
             <div class="space-y-1">
                 <p>{{ __('footer.hours_week') }}</p>
                 <p>{{ __('footer.hours_weekend') }}</p>
             </div>
 
-            <!-- Contact -->
             <div class="space-y-1">
                 <p><a href="mailto:{{ config('contact.email') }}" class="hover:text-black transition-colors">{{ config('contact.email') }}</a></p>
                 <p><a href="tel:{{ str_replace(' ', '', config('contact.phone')) }}" class="hover:text-black transition-colors">{{ config('contact.phone') }}</a></p>
             </div>
 
-            <!-- Legal Info -->
             <div class="space-y-1">
                 <p>&copy; {{ date('Y') }}. {{ __('footer.rights') }}</p>
                 <p>{{ config('contact.name') }}</p>
                 <p>{{ __('footer.tax_number_label') }} {{ config('contact.tax_number') }}</p>
             </div>
 
-            <!-- Links -->
             <div class="flex flex-col gap-1 items-start md:items-end">
                 <a href="{{ route(app()->getLocale() . '.cookies') }}" class="hover:text-black transition-colors">{{ __('footer.cookies') }}</a>
                 <a href="{{ route(app()->getLocale() . '.privacy') }}" class="hover:text-black transition-colors">{{ __('footer.privacy') }}</a>

@@ -19,4 +19,9 @@ class EditProduct extends EditRecord
                 ->label('Törlés'),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
