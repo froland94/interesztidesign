@@ -16,7 +16,7 @@ class ListGalleries extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label('Új kép'),
+                ->label(__('admin/galleries.new')),
         ];
     }
 }

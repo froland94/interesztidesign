@@ -16,7 +16,7 @@ class ListProducts extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label('Új termék'),
+                ->label(__('admin/products.new')),
         ];
     }
 }

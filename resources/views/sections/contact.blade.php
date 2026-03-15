@@ -94,7 +94,7 @@
                             </span>
                         </label>
                         <p class="text-[10px] font-light text-neutral-400 pl-7">
-                            Az <a href="{{ route(app()->getLocale() . '.privacy') }}" class="text-neutral-900 hover:underline font-medium">Adatkezelési tájékoztatót</a> itt érheti el.
+                            {!! __('contact.form.privacy_link_text', ['url' => route(app()->getLocale() . '.privacy')]) !!}
                         </p>
                     </div>
 

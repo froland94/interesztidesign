@@ -13,7 +13,7 @@ return [
         'property' => 'Ingatlan alapadatai (cím/környék, típus – ház, lakás, alapterület, helyiségek száma)',
         'description' => 'Írd le röviden az otthonoddal kapcsolatos problémáid, igényeid, elképzeléseid.',
         'privacy' => 'Elolvastam és elfogadom az Adatkezelési tájékoztatót.',
-        'privacy_link_text' => 'Az Adatkezelési tájékoztatót itt érheti el.',
+        'privacy_link_text' => 'Az <a href=":url" class="text-neutral-900 hover:underline font-medium">Adatkezelési tájékoztatót</a> itt érheti el.',
         'submit' => 'Küldés',
         'required' => '(kötelező)',
     ],

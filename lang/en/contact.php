@@ -13,7 +13,7 @@ return [
         'property' => 'Property details (address/area, type – house, flat, floor area, number of rooms)',
         'description' => 'Briefly describe the issues, needs, and ideas you have regarding your home.',
         'privacy' => 'I have read and accept the Privacy Policy.',
-        'privacy_link_text' => 'You can read the Privacy Policy here.',
+        'privacy_link_text' => 'You can read the <a href=":url" class="text-neutral-900 hover:underline font-medium">Privacy Policy</a> here.',
         'submit' => 'Send',
         'required' => '(required)',
     ],

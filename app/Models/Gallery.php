@@ -4,32 +4,26 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Concerns\ClearsCache;
+use App\Models\Concerns\HasSortOrder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 
 class Gallery extends Model
 {
+    use ClearsCache;
     use HasFactory;
+    use HasSortOrder;
 
     protected $table = 'galleries';
 
     protected static function booted(): void
     {
-        static::creating(function (Gallery $gallery): void {
-            if ($gallery->sort_order === null) {
-                $gallery->sort_order = (int) static::max('sort_order') + 1;
-            }
-        });
-
         static::saving(function (Gallery $gallery): void {
             if ($gallery->image) {
                 $gallery->alt = pathinfo($gallery->image, PATHINFO_FILENAME);
             }
         });
-
-        static::saved(fn () => Cache::forget('galleries'));
-        static::deleted(fn () => Cache::forget('galleries'));
     }
 
     protected $fillable = [

@@ -14,7 +14,7 @@ class GalleryForm
         return $schema
             ->components([
                 FileUpload::make('image')
-                    ->label('Kép')
+                    ->label(__('admin/common.image'))
                     ->columnSpanFull()
                     ->disk('galleries')
                     ->directory('')

@@ -16,7 +16,7 @@ class EditProduct extends EditRecord
     {
         return [
             DeleteAction::make()
-                ->label('Törlés'),
+                ->label(__('admin/common.delete')),
         ];
     }
 

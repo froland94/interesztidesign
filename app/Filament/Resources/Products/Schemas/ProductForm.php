@@ -16,57 +16,57 @@ class ProductForm
     {
         return $schema
             ->components([
-                Tabs::make('Fordítások')
+                Tabs::make(__('admin/common.translations'))
                     ->columnSpanFull()
                     ->tabs([
-                        Tabs\Tab::make('Magyar')
+                        Tabs\Tab::make(__('admin/common.hungarian'))
                             ->icon('heroicon-o-language')
                             ->schema([
                                 TextInput::make('tag.hu')
-                                    ->label('Címke (pl. Vibe check)'),
+                                    ->label(__('admin/products.tag')),
                                 TextInput::make('title.hu')
-                                    ->label('Megnevezés')
+                                    ->label(__('admin/products.title'))
                                     ->required(),
                                 Textarea::make('description.hu')
-                                    ->label('Leírás')
+                                    ->label(__('admin/products.description'))
                                     ->required()
                                     ->rows(5),
                                 Repeater::make('includes.hu')
-                                    ->label('Mit tartalmaz')
+                                    ->label(__('admin/products.includes'))
                                     ->required()
                                     ->simple(
                                         TextInput::make('item')
-                                            ->label('Elem')
+                                            ->label(__('admin/common.item'))
                                             ->required()
                                     ),
                                 Textarea::make('price.hu')
-                                    ->label('Ár (több soros is lehet)')
+                                    ->label(__('admin/products.price'))
                                     ->rows(3),
                                 TextInput::make('cta_text.hu')
-                                    ->label('Gomb szöveg'),
+                                    ->label(__('admin/products.cta_text')),
                             ]),
 
-                        Tabs\Tab::make('Angol')
+                        Tabs\Tab::make(__('admin/common.english'))
                             ->icon('heroicon-o-language')
                             ->schema([
                                 TextInput::make('tag.en')
-                                    ->label('Címke (pl. Vibe check)'),
+                                    ->label(__('admin/products.tag')),
                                 TextInput::make('title.en')
-                                    ->label('Megnevezés'),
+                                    ->label(__('admin/products.title')),
                                 Textarea::make('description.en')
-                                    ->label('Leírás')
+                                    ->label(__('admin/products.description'))
                                     ->rows(5),
                                 Repeater::make('includes.en')
-                                    ->label('Mit tartalmaz')
+                                    ->label(__('admin/products.includes'))
                                     ->simple(
                                         TextInput::make('item')
-                                            ->label('Elem')
+                                            ->label(__('admin/common.item'))
                                     ),
                                 Textarea::make('price.en')
-                                    ->label('Ár (több soros is lehet)')
+                                    ->label(__('admin/products.price'))
                                     ->rows(3),
                                 TextInput::make('cta_text.en')
-                                    ->label('Gomb szöveg'),
+                                    ->label(__('admin/products.cta_text')),
                             ]),
                     ]),
             ]);

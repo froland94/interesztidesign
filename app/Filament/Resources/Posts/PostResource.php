@@ -24,12 +24,12 @@ class PostResource extends Resource
 
     public static function getPluralLabel(): ?string
     {
-        return 'Bejegyzések';
+        return __('admin/posts.plural');
     }
 
     public static function getLabel(): ?string
     {
-        return 'Bejegyzés';
+        return __('admin/posts.singular');
     }
 
     public static function form(Schema $schema): Schema

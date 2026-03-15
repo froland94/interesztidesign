@@ -23,14 +23,14 @@ class PostForm
     {
         return $schema
             ->components([
-                Tabs::make('Fordítások')
+                Tabs::make(__('admin/common.translations'))
                     ->columnSpanFull()
                     ->tabs([
-                        Tabs\Tab::make('Magyar')
+                        Tabs\Tab::make(__('admin/common.hungarian'))
                             ->icon('heroicon-o-language')
                             ->schema([
                                 TextInput::make('title.hu')
-                                    ->label('Cím')
+                                    ->label(__('admin/posts.title'))
                                     ->required()
                                     ->live(debounce: 500)
                                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug.hu', Str::slug($state ?? ''))),
@@ -38,25 +38,25 @@ class PostForm
                                     ->label('Slug')
                                     ->required(),
                                 TextInput::make('excerpt.hu')
-                                    ->label('Kivonat')
+                                    ->label(__('admin/posts.excerpt'))
                                     ->required(),
                             ]),
-                        Tabs\Tab::make('Angol')
+                        Tabs\Tab::make(__('admin/common.english'))
                             ->icon('heroicon-o-language')
                             ->schema([
                                 TextInput::make('title.en')
-                                    ->label('Cím')
+                                    ->label(__('admin/posts.title'))
                                     ->live(debounce: 500)
                                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug.en', Str::slug($state ?? ''))),
                                 TextInput::make('slug.en')
                                     ->label('Slug'),
                                 TextInput::make('excerpt.en')
-                                    ->label('Kivonat'),
+                                    ->label(__('admin/posts.excerpt')),
                             ]),
                     ]),
 
                 FileUpload::make('thumbnail')
-                    ->label('Borítókép')
+                    ->label(__('admin/posts.thumbnail'))
                     ->disk('blog')
                     ->directory('')
                     ->visibility('public')
@@ -68,26 +68,26 @@ class PostForm
                     ->columnSpanFull()
                     ->schema([
                         Toggle::make('is_published')
-                            ->label('Közzétéve'),
+                            ->label(__('admin/posts.is_published')),
                         DatePicker::make('published_at')
-                            ->label('Megjelenés dátuma'),
+                            ->label(__('admin/posts.published_at')),
                     ]),
 
                 Builder::make('content')
-                    ->label('Tartalom')
+                    ->label(__('admin/posts.content'))
                     ->columnSpanFull()
                     ->blocks([
                         Block::make('text')
-                            ->label('Szöveg')
+                            ->label(__('admin/posts.text_block'))
                             ->icon('heroicon-o-bars-3-bottom-left')
                             ->schema([
                                 Tabs::make('text_lang')
                                     ->tabs([
-                                        Tabs\Tab::make('Magyar')
+                                        Tabs\Tab::make(__('admin/common.hungarian'))
                                             ->icon('heroicon-o-language')
                                             ->schema([
                                                 RichEditor::make('content.hu')
-                                                    ->label('Szöveg (Magyar)')
+                                                    ->label(__('admin/posts.text_hu'))
                                                     ->toolbarButtons([
                                                         'bold',
                                                         'italic',
@@ -100,11 +100,11 @@ class PostForm
                                                         'redo',
                                                     ]),
                                             ]),
-                                        Tabs\Tab::make('Angol')
+                                        Tabs\Tab::make(__('admin/common.english'))
                                             ->icon('heroicon-o-language')
                                             ->schema([
                                                 RichEditor::make('content.en')
-                                                    ->label('Szöveg (Angol)')
+                                                    ->label(__('admin/posts.text_en'))
                                                     ->toolbarButtons([
                                                         'bold',
                                                         'italic',
@@ -121,11 +121,11 @@ class PostForm
                             ]),
 
                         Block::make('image')
-                            ->label('Kép')
+                            ->label(__('admin/posts.image_block'))
                             ->icon('heroicon-o-photo')
                             ->schema([
                                 FileUpload::make('path')
-                                    ->label('Kép')
+                                    ->label(__('admin/common.image'))
                                     ->disk('blog')
                                     ->directory('')
                                     ->visibility('public')
@@ -134,27 +134,27 @@ class PostForm
                                     ->required(),
                                 Tabs::make('image_caption_lang')
                                     ->tabs([
-                                        Tabs\Tab::make('Magyar')
+                                        Tabs\Tab::make(__('admin/common.hungarian'))
                                             ->icon('heroicon-o-language')
                                             ->schema([
                                                 TextInput::make('caption.hu')
-                                                    ->label('Felirat (Magyar)'),
+                                                    ->label(__('admin/posts.caption_hu')),
                                             ]),
-                                        Tabs\Tab::make('Angol')
+                                        Tabs\Tab::make(__('admin/common.english'))
                                             ->icon('heroicon-o-language')
                                             ->schema([
                                                 TextInput::make('caption.en')
-                                                    ->label('Felirat (Angol)'),
+                                                    ->label(__('admin/posts.caption_en')),
                                             ]),
                                     ]),
                             ]),
 
                         Block::make('gallery')
-                            ->label('Galéria')
+                            ->label(__('admin/posts.gallery_block'))
                             ->icon('heroicon-o-rectangle-group')
                             ->schema([
                                 FileUpload::make('images')
-                                    ->label('Képek')
+                                    ->label(__('admin/common.images'))
                                     ->disk('blog')
                                     ->directory('')
                                     ->visibility('public')
