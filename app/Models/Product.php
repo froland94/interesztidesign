@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Spatie\Translatable\HasTranslations;
 
 class Product extends Model
@@ -20,6 +21,9 @@ class Product extends Model
                 $product->sort_order = (int) static::max('sort_order') + 1;
             }
         });
+
+        static::saved(fn () => Cache::forget('products'));
+        static::deleted(fn () => Cache::forget('products'));
     }
 
     protected $fillable = [

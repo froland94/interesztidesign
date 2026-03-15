@@ -153,6 +153,13 @@ protected function isAccessible(User $user, ?string $path = null): bool
     - Execute PHP scripts: `vendor/bin/sail php [script]`
 - View all available Sail commands by running `vendor/bin/sail` without arguments.
 
+=== tests rules ===
+
+# Test Enforcement
+
+- Every change must be programmatically tested. Write a new test or update an existing test, then run the affected tests to make sure they pass.
+- Run the minimum number of tests needed to ensure code quality and speed. Use `vendor/bin/sail artisan test --compact` with a specific filename or filter.
+
 === laravel/core rules ===
 
 # Do Things the Laravel Way
@@ -418,3 +425,27 @@ livewire(ListUsers::class)
 - **Never assume full-width layout.** `Grid`, `Section`, and `Fieldset` do not span all columns by default. Explicitly set column spans when needed.
 
 </laravel-boost-guidelines>
+
+# Project Conventions
+
+## Routing
+
+- **Never put validation or business logic directly in route closures** in `web.php` or any route file. Always extract this logic into a dedicated controller method.
+- **Route files are split by concern:**
+  - `routes/web.php` — public-facing frontend routes only
+  - `routes/admin.php` — admin panel routes (registered via `bootstrap/app.php` with `web` middleware)
+  - Add new route files for other concerns (e.g. `routes/api.php`) as needed.
+
+## Localization & Translations
+
+- **NEVER use inline ternary locale checks in Blade views**, e.g. `app()->getLocale() === 'hu' ? '...' : '...'`. This is forbidden.
+- Always use the `__('key')` helper with the appropriate language file (e.g. `__('blog.read_more')`).
+- Create a dedicated `lang/hu/*.php` and `lang/en/*.php` file per concern (e.g. `blog.php`, `nav.php`).
+- **NEVER hardcode locale strings** (`'hu'`, `'en'`) anywhere in PHP code or Blade views. Always use the `App\Enums\Locale` enum: `Locale::HUNGARIAN->value`, `Locale::ENGLISH->value`. To iterate over all locales use `Locale::cases()` or `Locale::values()`.
+- **When using a class in a Blade view**, always import it at the top of the file with `@php use App\...\ClassName; @endphp`, then reference it directly (e.g. `Locale::cases()`). Never use the fully-qualified class name inline (e.g. `App\Enums\Locale::cases()`).
+
+## Controllers
+
+- Admin controllers live in `app/Http/Controllers/Admin/`.
+- Public controllers live in `app/Http/Controllers/` (or a relevant subfolder).
+- Always create a Form Request for validation instead of validating inline in the controller.
