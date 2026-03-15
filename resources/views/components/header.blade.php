@@ -10,6 +10,9 @@
             <a href="{{ route(app()->getLocale() . '.home') }}#{{ __('nav.anchors.services') }}" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
                 {{ __('nav.services') }}
             </a>
+            <a href="{{ route(app()->getLocale() . '.home') }}#{{ __('nav.anchors.gallery') }}" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
+                {{ __('nav.gallery') }}
+            </a>
             <a href="{{ route(app()->getLocale() . '.home') }}#{{ __('nav.anchors.about') }}" class="text-neutral-500 hover:text-black text-xs font-semibold tracking-widest uppercase transition-colors">
                 {{ __('nav.about') }}
             </a>

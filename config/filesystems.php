@@ -49,6 +49,15 @@ return [
             'report' => false,
         ],
 
+        'galleries' => [
+            'driver' => 'local',
+            'root' => public_path('gallery'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/gallery',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
