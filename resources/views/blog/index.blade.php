@@ -2,7 +2,6 @@
     <section class="pt-32 pb-24">
         <div class="max-w-7xl mx-auto px-6">
 
-            <!-- Section Header -->
             <div class="max-w-3xl mb-20 text-center mx-auto">
                 <h1 class="text-4xl sm:text-5xl font-light tracking-tight mb-6 text-neutral-900">Blog</h1>
                 <div class="w-12 h-px bg-neutral-200 mx-auto mt-8"></div>

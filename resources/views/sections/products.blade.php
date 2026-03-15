@@ -1,7 +1,5 @@
-<!-- Services Section -->
 <section id="{{ __('nav.anchors.services') }}" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Section Header -->
         <div class="max-w-3xl mb-20 text-center mx-auto">
             <p class="text-neutral-400 text-sm font-light tracking-widest uppercase mb-4">
                 {{ __('hero.subtitle') }}
@@ -13,7 +11,6 @@
             <div class="w-12 h-px bg-neutral-200 mx-auto mt-8"></div>
         </div>
 
-        <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($products as $product)
             <div class="service-card p-8 rounded-[2rem] border border-neutral-200 bg-white/50 backdrop-blur-sm flex flex-col hover:border-neutral-300">

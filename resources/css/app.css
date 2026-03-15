@@ -7,7 +7,6 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* Gallery masonry grid */
 .gallery-masonry-sizer,
 .gallery-masonry-item {
     width: 100%;
@@ -31,7 +30,6 @@
     margin-bottom: 16px;
 }
 
-/* Blog rich text content */
 .blog-content p { margin-bottom: 1.25rem; line-height: 1.75; color: #525252; }
 .blog-content h2 { font-size: 1.5rem; font-weight: 300; margin-top: 2rem; margin-bottom: 0.75rem; color: #171717; letter-spacing: -0.015em; }
 .blog-content h3 { font-size: 1.2rem; font-weight: 400; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #171717; }

@@ -2,7 +2,6 @@
     <article class="pt-32 pb-24">
         <div class="max-w-3xl mx-auto px-6">
 
-            <!-- Post header -->
             <header class="mb-12">
                 <p class="text-xs text-neutral-400 tracking-widest uppercase mb-6">
                     {{ $post->published_at?->format('Y-m-d') }}
@@ -18,7 +17,6 @@
                 <div class="w-12 h-px bg-neutral-200 mt-10"></div>
             </header>
 
-            <!-- Content blocks -->
             @foreach ($post->content ?? [] as $block)
 
                 @if ($block['type'] === 'text')
@@ -62,7 +60,6 @@
 
             @endforeach
 
-            <!-- Back link -->
             <div class="mt-16 pt-10 border-t border-neutral-100">
                 <a href="{{ route(app()->getLocale() . '.blog.index') }}"
                    class="text-xs font-semibold tracking-widest uppercase text-neutral-500 hover:text-neutral-900 transition-colors">
