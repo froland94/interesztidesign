@@ -66,6 +66,7 @@ class PostForm
 
                 Grid::make(2)
                     ->columnSpanFull()
+                    ->visibleOn('edit')
                     ->schema([
                         Toggle::make('is_published')
                             ->label(__('admin/posts.is_published')),

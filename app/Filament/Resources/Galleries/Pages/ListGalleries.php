@@ -16,7 +16,8 @@ class ListGalleries extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label(__('admin/galleries.new')),
+                ->label('')
+                ->icon('heroicon-o-plus'),
         ];
     }
 }

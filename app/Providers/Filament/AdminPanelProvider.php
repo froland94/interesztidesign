@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\EditProfile;
+use App\Filament\Widgets\AccountWidget;
 use App\Http\Middleware\SetLocale;
 use App\Models\User;
 use Filament\Enums\ThemeMode;
@@ -18,8 +19,6 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Icons\Heroicon;
 use Filament\View\PanelsRenderHook;
-use Filament\Widgets\AccountWidget;
-use Filament\Widgets\FilamentInfoWidget;
 use GeoSot\FilamentEnvEditor\FilamentEnvEditorPlugin;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -62,11 +61,14 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
-                FilamentInfoWidget::class,
             ])
             ->renderHook(
                 PanelsRenderHook::HEAD_END,
                 fn (): View|string => $this->themeScript(),
+            )
+            ->renderHook(
+                PanelsRenderHook::HEAD_END,
+                fn (): string => '<style>.fi-ta-content-grid .fi-ta-record { overflow: hidden; } .fi-ta-content-grid .fi-ta-record img { width: 100%; object-fit: cover; display: block; }</style>',
             )
             ->plugins([
                 FilamentEnvEditorPlugin::make()

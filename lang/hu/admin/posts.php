@@ -7,7 +7,7 @@ return [
     'singular' => 'Bejegyzés',
     'new' => 'Új bejegyzés',
     'title' => 'Cím',
-    'excerpt' => 'Kivonat',
+    'excerpt' => 'Bevezető',
     'thumbnail' => 'Borítókép',
     'is_published' => 'Közzétéve',
     'published_at' => 'Megjelenés dátuma',

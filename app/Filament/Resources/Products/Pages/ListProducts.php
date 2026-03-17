@@ -16,7 +16,8 @@ class ListProducts extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label(__('admin/products.new')),
+                ->label('')
+                ->icon('heroicon-o-plus'),
         ];
     }
 }
