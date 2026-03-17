@@ -16,7 +16,8 @@ class ListPosts extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label(__('admin/posts.new')),
+                ->label('')
+                ->icon('heroicon-o-plus'),
         ];
     }
 }
