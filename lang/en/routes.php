@@ -6,4 +6,5 @@ return [
     'cookies' => 'cookie-policy',
     'privacy' => 'privacy-policy',
     'blog' => 'blog',
+    'contact' => 'send-contact-message',
 ];

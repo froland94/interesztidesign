@@ -8,9 +8,12 @@ start:
 	@echo "\nDatabase ready! Running migrations..."
 	./vendor/bin/sail artisan migrate
 	$(MAKE) build
+	./vendor/bin/sail artisan optimize:clear
+	./vendor/bin/sail artisan session:flush
 	$(MAKE) pint
 
 build:
+	rm -f public/hot
 	./vendor/bin/sail pnpm run build
 
 down:

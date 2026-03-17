@@ -6,4 +6,5 @@ return [
     'cookies' => 'suti-tajekoztato',
     'privacy' => 'adatkezelesi-tajekoztato',
     'blog' => 'blog',
+    'contact' => 'kapcsolat-uzenetet-kuld',
 ];
