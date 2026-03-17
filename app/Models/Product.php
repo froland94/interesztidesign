@@ -4,27 +4,18 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Concerns\ClearsCache;
+use App\Models\Concerns\HasSortOrder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 use Spatie\Translatable\HasTranslations;
 
 class Product extends Model
 {
+    use ClearsCache;
     use HasFactory;
+    use HasSortOrder;
     use HasTranslations;
-
-    protected static function booted(): void
-    {
-        static::creating(function (Product $product): void {
-            if ($product->sort_order === null) {
-                $product->sort_order = (int) static::max('sort_order') + 1;
-            }
-        });
-
-        static::saved(fn () => Cache::forget('products'));
-        static::deleted(fn () => Cache::forget('products'));
-    }
 
     protected $fillable = [
         'tag',

@@ -24,12 +24,12 @@ class GalleryResource extends Resource
 
     public static function getPluralLabel(): ?string
     {
-        return 'Galéria';
+        return __('admin/galleries.plural');
     }
 
     public static function getLabel(): ?string
     {
-        return 'Galéria kép';
+        return __('admin/galleries.singular');
     }
 
     public static function form(Schema $schema): Schema

@@ -19,15 +19,15 @@ class PostsTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->label('Cím')
+                    ->label(__('admin/posts.title'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('published_at')
-                    ->label('Megjelenés')
+                    ->label(__('admin/posts.published'))
                     ->date('Y-m-d')
                     ->sortable(),
                 ToggleColumn::make('is_published')
-                    ->label('Közzétéve'),
+                    ->label(__('admin/posts.is_published')),
             ])
             ->defaultSort('published_at', 'desc')
             ->filters([])
@@ -42,8 +42,8 @@ class PostsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()
-                        ->label('Kijelöltek törlése'),
-                ])->label('Műveletek'),
+                        ->label(__('admin/common.bulk_delete')),
+                ])->label(__('admin/common.bulk_actions')),
             ]);
     }
 }

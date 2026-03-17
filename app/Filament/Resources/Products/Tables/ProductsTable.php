@@ -19,14 +19,14 @@ class ProductsTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->label('Megnevezés')
+                    ->label(__('admin/products.title'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('tag')
-                    ->label('Címke')
+                    ->label(__('admin/products.tag'))
                     ->searchable(),
                 ToggleColumn::make('is_active')
-                    ->label('Aktív'),
+                    ->label(__('admin/common.active')),
             ])
             ->reorderable('sort_order')
             ->defaultSort('sort_order')
@@ -44,8 +44,8 @@ class ProductsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()
-                        ->label('Kijelöltek törlése'),
-                ])->label('Műveletek'),
+                        ->label(__('admin/common.bulk_delete')),
+                ])->label(__('admin/common.bulk_actions')),
             ]);
     }
 }

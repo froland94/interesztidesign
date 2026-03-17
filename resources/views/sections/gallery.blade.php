@@ -1,9 +1,9 @@
 @if($galleries->isNotEmpty())
-<section id="munkak" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
+<section id="{{ __('nav.anchors.gallery') }}" class="py-24 sm:py-32 bg-neutral-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="max-w-3xl mb-20 text-center mx-auto">
-            <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-6 text-neutral-900">Munkáim</h2>
+            <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-6 text-neutral-900">{{ __('nav.gallery') }}</h2>
             <div class="w-12 h-px bg-neutral-200 mx-auto mt-8"></div>
         </div>
 

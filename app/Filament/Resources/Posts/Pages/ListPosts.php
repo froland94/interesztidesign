@@ -16,7 +16,7 @@ class ListPosts extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label('Új bejegyzés'),
+                ->label(__('admin/posts.new')),
         ];
     }
 }

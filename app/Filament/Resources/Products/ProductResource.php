@@ -24,12 +24,12 @@ class ProductResource extends Resource
 
     public static function getPluralLabel(): ?string
     {
-        return 'Termékek';
+        return __('admin/products.plural');
     }
 
     public static function getLabel(): ?string
     {
-        return 'Termék';
+        return __('admin/products.singular');
     }
 
     public static function form(Schema $schema): Schema

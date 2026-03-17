@@ -16,7 +16,7 @@ class EditGallery extends EditRecord
     {
         return [
             DeleteAction::make()
-                ->label('Törlés'),
+                ->label(__('admin/common.delete')),
         ];
     }
 

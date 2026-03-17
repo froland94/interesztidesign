@@ -20,7 +20,7 @@ class CreateGallery extends CreateRecord
         return $schema
             ->components([
                 FileUpload::make('images')
-                    ->label('Képek')
+                    ->label(__('admin/galleries.image_upload'))
                     ->columnSpanFull()
                     ->disk('galleries')
                     ->directory('')

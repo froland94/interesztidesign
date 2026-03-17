@@ -19,12 +19,12 @@ class GalleriesTable
         return $table
             ->columns([
                 ImageColumn::make('image')
-                    ->label('Kép')
+                    ->label(__('admin/common.image'))
                     ->disk('galleries')
                     ->height(60)
                     ->width(80),
                 ToggleColumn::make('is_active')
-                    ->label('Aktív'),
+                    ->label(__('admin/common.active')),
             ])
             ->reorderable('sort_order')
             ->defaultSort('sort_order')
@@ -40,8 +40,8 @@ class GalleriesTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()
-                        ->label('Kijelöltek törlése'),
-                ])->label('Műveletek'),
+                        ->label(__('admin/common.bulk_delete')),
+                ])->label(__('admin/common.bulk_actions')),
             ]);
     }
 }

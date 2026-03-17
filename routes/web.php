@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Enums\Locale;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,8 @@ foreach (Locale::values() as $locale) {
                 ->name('blog.index');
             Route::get(trans('routes.blog', locale: $locale).'/{slug}', [BlogController::class, 'show'])
                 ->name('blog.show');
+
+            Route::post(trans('routes.contact', locale: $locale), [ContactController::class, 'store'])
+                ->name('contact.store');
         });
 }
