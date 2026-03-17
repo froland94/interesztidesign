@@ -1,15 +1,15 @@
 start:
 	./vendor/bin/sail up -d
-	@echo "Waiting for database connection..."
-	@until ./vendor/bin/sail artisan migrate > /dev/null 2>&1; do \
+	@echo "Waiting for database to be healthy..."
+	@until [ "$$(docker inspect --format='{{.State.Health.Status}}' interesztidesign-mysql-1 2>/dev/null)" = "healthy" ]; do \
 		printf "."; \
-		sleep 2; \
+		sleep 1; \
 	done
-	@echo "\nDatabase ready! Running migrations..."
+	@echo ""
+	@echo "Database ready! Running setup..."
 	./vendor/bin/sail artisan migrate
 	$(MAKE) build
 	./vendor/bin/sail artisan optimize:clear
-	./vendor/bin/sail artisan session:flush
 	$(MAKE) pint
 
 build:
